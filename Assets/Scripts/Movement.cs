@@ -9,10 +9,13 @@ public class Movement : MonoBehaviour {
 	void Update () {
 		TestKey ();
 
-		if (DeltaX > 0)
-			DeltaX = DeltaX - .01f;
-		if (DeltaX < 0)
-			DeltaX = DeltaX + .01f;
+		if (DeltaX != 0) {
+			if (DeltaX > 0)
+				DeltaX = DeltaX - .01F;
+			if (DeltaX < 0)
+				DeltaX = DeltaY + .01F;
+		}
+			
 
 		if (DeltaXOld != DeltaX || DeltaX == 0f)
 		transform.position = new Vector3 (transform.position.x + DeltaX, transform.position.y + DeltaY, transform.position.z);
@@ -25,9 +28,6 @@ public class Movement : MonoBehaviour {
 
 		if (Input.GetKey ("d"))
 			DeltaX = .1f;
-
-		if (!Input.GetKey ("d") && !Input.GetKey ("a"))
-			DeltaX = DeltaX;
 
 		if (Input.GetKeyDown ("space"))
 			DeltaY = .1f;
