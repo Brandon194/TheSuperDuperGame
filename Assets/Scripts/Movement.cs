@@ -15,6 +15,14 @@ public class Movement : MonoBehaviour {
 			if (DeltaX < 0)
 				DeltaX = DeltaY + .01F;
 		}
+
+		if (DeltaY != 0){
+			if (DeltaY > 0)
+				DeltaY = DeltaY - .01F;
+			if (DeltaY < 0)
+				DeltaY = DeltaY + .01F;
+		}
+
 			
 
 		if (DeltaXOld != DeltaX || DeltaX == 0f)
